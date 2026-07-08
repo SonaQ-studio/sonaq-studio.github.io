@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -11,7 +7,6 @@ body {
     line-height: 1.6;
 }
 
-/* Neon Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -33,7 +28,8 @@ nav {
 
 .logo {
     color: #00f7ff;
-    text-shadow: 0 0 10px #00f7ff;
+    text-shadow: 0 0 15px #00f7ff;
+    font-size: 1.8rem;
 }
 
 .nav-links a {
@@ -48,7 +44,6 @@ nav {
     text-shadow: 0 0 8px #00f7ff;
 }
 
-/* Hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -64,42 +59,55 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0, 247, 255, 0.04) 20px, rgba(0, 247, 255, 0.04) 40px);
-    animation: matrix 20s linear infinite;
+    background: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(0, 247, 255, 0.04) 25px, rgba(0, 247, 255, 0.04) 50px);
+    animation: matrix 25s linear infinite;
 }
 
 .neon-title {
-    font-size: 4.5rem;
+    font-size: 5rem;
     color: #00f7ff;
-    text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+    text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff, 0 0 60px #ff00aa;
     margin-bottom: 1rem;
 }
 
-.tagline {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
+.tagline { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.status { color: #ff00aa; font-size: 1.4rem; }
 
-.status {
-    color: #ff00aa;
-    font-size: 1.3rem;
-}
-
-/* Sections */
 .section {
-    padding: 4rem 1rem;
+    padding: 5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+.releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.release-card {
+    background: #1a1a2e;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #00f7ff33;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.release-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.25);
+}
+
+.embed-container {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .neon-title { font-size: 3rem; }
-    .nav-links { display: flex; flex-direction: column; gap: 1rem; }
+    .neon-title { font-size: 3.2rem; }
+    .nav-links { flex-direction: column; gap: 1rem; }
 }
