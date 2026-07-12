@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .release-page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-        .release-header { display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
-        .cover { width: 280px; height: 280px; border-radius: 12px; border: 1px solid #00f7ff33; object-fit: cover; flex-shrink: 0; }
-        .release-info h1 { font-size: 2.5rem; color: #00f7ff; margin-bottom: 0.5rem; }
-        .release-date { color: #ff00aa; font-size: 1.1rem; margin-bottom: 1rem; }
-        .section-title { color: #00f7ff; margin: 2.5rem 0 1rem; font-size: 1.4rem; }
-        .lyrics { background: #1a1a2e; padding: 1.5rem; border-radius: 10px; white-space: pre-line; line-height: 1.7; border: 1px solid #00f7ff22; }
-        .platform-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .platform-link { display: flex; align-items: center; gap: 10px; padding: 12px 18px; background: #1a1a2e; border: 1px solid #00f7ff33; border-radius: 8px; color: #e0e0e0; text-decoration: none; transition: all 0.2s; }
-        .platform-link:hover { border-color: #00f7ff; color: #00f7ff; transform: translateY(-2px); }
-        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 2rem; color: #00f7ff; text-decoration: none; }
-    </style>
 </head>
 <body>
-    <nav><div class="nav-container"><a href="../index.html" class="logo">SonaQ</a></div></nav>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">SonaQ</a>
+            <div class="nav-links">
+                <a href="../index.html#releases">Релизы</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="release-page">
-        <a href="../index.html#releases" class="back-link"><i class="fas fa-arrow-left"></i> Все релизы</a>
+        <a href="../index.html#releases" class="back-link">
+            <i class="fas fa-arrow-left"></i> Все релизы
+        </a>
+
         <div class="release-header">
             <img src="../images/releases/cifrovoe-zavtra.jpg" alt="Цифровое Завтра" class="cover" onerror="this.src='../og-image.jpg'">
             <div class="release-info">
@@ -33,15 +31,37 @@
                 <p><strong>Описание:</strong> [Описание альбома]</p>
             </div>
         </div>
+
         <h2 class="section-title">Текст песен</h2>
         <div class="lyrics">[Тексты треков альбома]</div>
+
         <h2 class="section-title">Слушать</h2>
         <div class="platform-links">
             <a href="#" class="platform-link" target="_blank"><i class="fab fa-spotify"></i> <span>Spotify</span></a>
             <a href="#" class="platform-link" target="_blank"><i class="fas fa-music"></i> <span>Яндекс Музыка</span></a>
             <a href="#" class="platform-link" target="_blank"><i class="fab fa-apple"></i> <span>Apple Music</span></a>
         </div>
-        <div style="margin-top:2rem;"><h2 class="section-title">Клипы</h2><a href="#" class="smart-link" target="_blank"><i class="fab fa-youtube"></i> Смотреть на YouTube</a></div>
+
+        <div style="margin-top: 2.5rem;">
+            <h2 class="section-title">Клипы</h2>
+            <a href="#" target="_blank" class="smart-link"><i class="fab fa-youtube"></i> Смотреть на YouTube</a>
+        </div>
+
+        <div class="other-releases">
+            <h3>Другие релизы</h3>
+            <div class="other-releases-grid">
+                <a href="cifrovoy-haos.html" class="other-release">Цифровой Хаос</a>
+                <a href="zhit-druzhno.html" class="other-release">Жить Дружно</a>
+                <a href="elektro.html" class="other-release">Электро</a>
+                <a href="kod-v-moih-venah.html" class="other-release">Код в моих венах / Цифровое завтра</a>
+            </div>
+        </div>
     </div>
+
+    <footer id="contact" style="margin-top: 4rem;">
+        <div class="container" style="text-align: center; font-size: 0.9rem;">
+            <p>&copy; 2026 SonaQ. Digital Hermit Music.</p>
+        </div>
+    </footer>
 </body>
 </html>

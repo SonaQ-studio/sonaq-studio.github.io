@@ -103,6 +103,14 @@ nav {
     box-shadow: 0 0 25px rgba(0, 247, 255, 0.25);
 }
 
+.release-more {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #00f7ff;
+    opacity: 0.8;
+}
+
 .embed-container {
     margin-top: 1rem;
     border-radius: 8px;
@@ -135,4 +143,130 @@ nav {
     border-color: #00f7ff;
     transform: translateY(-2px);
     box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+}
+
+/* === Release Pages === */
+.release-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.release-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.cover {
+    width: 280px;
+    height: 280px;
+    border-radius: 12px;
+    border: 1px solid #00f7ff33;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.release-info h1 {
+    font-size: 2.5rem;
+    color: #00f7ff;
+    margin-bottom: 0.5rem;
+}
+
+.release-date {
+    color: #ff00aa;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    color: #00f7ff;
+    margin: 2.5rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.lyrics {
+    background: #1a1a2e;
+    padding: 1.5rem;
+    border-radius: 10px;
+    white-space: pre-line;
+    line-height: 1.7;
+    border: 1px solid #00f7ff22;
+    font-family: monospace;
+}
+
+.platform-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.platform-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: #1a1a2e;
+    border: 1px solid #00f7ff33;
+    border-radius: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.platform-link:hover {
+    border-color: #00f7ff;
+    color: #00f7ff;
+    transform: translateY(-2px);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2rem;
+    color: #00f7ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.other-releases {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #00f7ff22;
+}
+
+.other-releases h3 {
+    color: #00f7ff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.other-releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.other-release {
+    display: block;
+    padding: 1rem;
+    background: #1a1a2e;
+    border: 1px solid #00f7ff22;
+    border-radius: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.other-release:hover {
+    border-color: #00f7ff;
+    color: #00f7ff;
 }

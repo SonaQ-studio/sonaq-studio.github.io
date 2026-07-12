@@ -1,0 +1,26 @@
+# Automatically detect text files and normalize line endings to LF
+* text=auto
+
+# Force Unix-style line endings (LF) for all text files
+# This prevents CRLF warnings on Windows and keeps things consistent
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+
+# Treat binary files correctly
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
