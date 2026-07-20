@@ -3,8 +3,15 @@
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     background: #0a0a0a;
-    color: #e0e0e0;
-    line-height: 1.6;
+    color: #e8e8e8;
+    line-height: 1.65;
+}
+
+/* Accessibility: clearer secondary text */
+.description,
+.muted,
+.footer-copy {
+    color: #c5c5c5;
 }
 
 nav {
@@ -166,6 +173,23 @@ nav {
     inset: 0;
     background: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(0, 247, 255, 0.04) 25px, rgba(0, 247, 255, 0.04) 50px);
     animation: matrix 25s linear infinite;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero::before {
+        animation-duration: 60s;
+        opacity: 0.55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero::before {
+        animation: none;
+    }
+    .release-card:hover {
+        transform: none;
+    }
 }
 
 .neon-title {
@@ -188,32 +212,138 @@ nav {
 
 .releases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
 }
 
 .release-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: inherit;
-    background: #1a1a2e;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #00f7ff33;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #12121f;
+    padding: 0;
+    border-radius: 14px;
+    border: 1px solid #00f7ff28;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .release-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(0, 247, 255, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 247, 255, 0.18);
+    border-color: #00f7ff66;
+}
+
+.release-card-cover {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #0a0a12;
+}
+
+.release-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.release-card:hover .release-card-cover img {
+    transform: scale(1.06);
+}
+
+.release-card-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 18, 0.75) 0%, transparent 45%);
+    pointer-events: none;
+}
+
+.release-card-body {
+    padding: 1.1rem 1.25rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+}
+
+.release-card-body h3 {
+    font-size: 1.15rem;
+    color: #f0f0f0;
+    line-height: 1.3;
+}
+
+.release-card-body p {
+    color: #b8b8b8;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .release-more {
     display: inline-block;
-    margin-top: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.65rem;
     font-size: 0.85rem;
     color: #00f7ff;
-    opacity: 0.8;
+    opacity: 0.9;
+}
+
+/* Page 404 */
+.page-404 {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem 3rem;
+}
+
+.page-404 h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    color: #00f7ff;
+    text-shadow: 0 0 24px #00f7ff;
+    margin-bottom: 0.5rem;
+}
+
+.page-404 p {
+    color: #c5c5c5;
+    margin-bottom: 1.5rem;
+}
+
+/* Artist hero strip */
+.artist-hero {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.artist-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00f7ff55;
+    box-shadow: 0 0 24px rgba(0, 247, 255, 0.25);
+}
+
+.artist-bio {
+    flex: 1;
+    min-width: 240px;
+    max-width: 640px;
+    color: #d0d0d0;
+}
+
+.section h2 {
+    color: #f2f2f2;
+}
+
+.tagline {
+    color: #e0e0e0;
 }
 
 .embed-container {

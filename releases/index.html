@@ -3,36 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Все релизы SonaQ: Цифровой Хаос, Жить Дружно, Электро, Код в моих венах, альбом Цифровое Завтра.">
+    <meta property="og:title" content="Релизы — SonaQ">
+    <meta property="og:description" content="Каталог релизов SonaQ">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sonaq.studio/releases/">
+    <meta property="og:image" content="https://sonaq.studio/og-image.jpg">
     <title>Релизы — SonaQ</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=20260720">
     <link rel="icon" href="../favicon.png" type="image/png">
-    <meta http-equiv="refresh" content="0; url=../index.html#releases">
-    <style>
-        .redirect-page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: #0a0a0a;
-            color: #e0e0e0;
-        }
-        .redirect-content h1 {
-            color: #00f7ff;
-            margin-bottom: 1rem;
-        }
-        .redirect-content a {
-            color: #00f7ff;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="../favicon.png" sizes="180x180">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="redirect-page">
-        <div class="redirect-content">
-            <h1>Релизы SonaQ</h1>
-            <p>Перенаправляем на главную страницу...</p>
-            <p><a href="../index.html#releases">Если не перенаправило — нажмите здесь</a></p>
+    <div id="site-header"></div>
+
+    <main class="page-content">
+        <div class="container">
+            <h1 class="section-title" style="font-size:2rem; margin-top:0;">Релизы</h1>
+            <p class="muted" style="margin-bottom:1.5rem;">Все треки и альбомы проекта SonaQ.</p>
+
+            <div class="releases-grid">
+                <a href="cifrovoy-haos.html" class="release-card">
+                    <div class="release-card-cover">
+                        <img src="../images/releases/cifrovoy-haos.jpg" alt="Цифровой Хаос" loading="lazy">
+                    </div>
+                    <div class="release-card-body">
+                        <h3>Цифровой Хаос</h3>
+                        <p>10 июля 2026 — русские площадки</p>
+                        <span class="release-more">Подробнее →</span>
+                    </div>
+                </a>
+                <a href="zhit-druzhno.html" class="release-card">
+                    <div class="release-card-cover">
+                        <img src="../images/releases/zhit-druzhno.jpg" alt="Жить Дружно" loading="lazy">
+                    </div>
+                    <div class="release-card-body">
+                        <h3>Жить Дружно</h3>
+                        <p>13 июля 2026 — русские площадки</p>
+                        <span class="release-more">Подробнее →</span>
+                    </div>
+                </a>
+                <a href="elektro.html" class="release-card">
+                    <div class="release-card-cover">
+                        <img src="../images/releases/elektro.jpg" alt="Электро" loading="lazy">
+                    </div>
+                    <div class="release-card-body">
+                        <h3>Электро</h3>
+                        <p>14 июля 2026 — русские площадки</p>
+                        <span class="release-more">Подробнее →</span>
+                    </div>
+                </a>
+                <a href="kod-v-moih-venah.html" class="release-card">
+                    <div class="release-card-cover">
+                        <img src="../images/releases/kod-v-moih-venah.jpg" alt="Код в моих венах" loading="lazy">
+                    </div>
+                    <div class="release-card-body">
+                        <h3>Код в моих венах / Цифровое завтра</h3>
+                        <p>23 июля 2026 — русские площадки</p>
+                        <span class="release-more">Подробнее →</span>
+                    </div>
+                </a>
+                <a href="cifrovoe-zavtra.html" class="release-card">
+                    <div class="release-card-cover">
+                        <img src="../images/releases/kod-v-moih-venah.jpg" alt="Цифровое Завтра" loading="lazy" onerror="this.src='../og-image.jpg'">
+                    </div>
+                    <div class="release-card-body">
+                        <h3>Цифровое Завтра</h3>
+                        <p>Альбом (5 треков) — 23 июля 2026</p>
+                        <span class="release-more">Подробнее →</span>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="../js/site.js?v=20260720"></script>
 </body>
 </html>
