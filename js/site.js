@@ -93,7 +93,7 @@
     { id: "zhit-druzhno", title: "Жить Дружно", href: "zhit-druzhno.html" },
     { id: "elektro", title: "Электро", href: "elektro.html" },
     { id: "kod-v-moih-venah", title: "Цифровое завтра", href: "kod-v-moih-venah.html" },
-    { id: "cifrovoe-zavtra", title: "Цифровое Завтра", href: "cifrovoe-zavtra.html" },
+    { id: "cifrovoe-zavtra", title: "Digital Tomorrow (альбом)", href: "cifrovoe-zavtra.html" },
     { id: "8bitnaya-nostalgiya", title: "8битная настальгия", href: "8bitnaya-nostalgiya.html" },
     { id: "skazochnyy-memolog", title: "Сказочный мемолог", href: "skazochnyy-memolog.html" }
   ];
