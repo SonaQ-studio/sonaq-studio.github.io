@@ -599,6 +599,18 @@ nav {
     font-weight: 600;
 }
 
+.lyrics-lang-tag {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.12rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #00f7ff;
+    border: 1px solid #00f7ff44;
+    border-radius: 999px;
+    vertical-align: middle;
+}
+
 .lyrics {
     background: #1a1a2e;
     padding: 1.5rem;
