@@ -235,6 +235,11 @@ nav {
     border-color: #00f7ff66;
 }
 
+.release-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 280px 360px;
+}
+
 .release-card-cover {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -248,6 +253,8 @@ nav {
     object-fit: cover;
     display: block;
     transition: transform 0.45s ease;
+    /* не блокировать скролл/клики при декоде */
+    content-visibility: auto;
 }
 
 .release-card:hover .release-card-cover img {
