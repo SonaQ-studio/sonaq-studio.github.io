@@ -542,6 +542,92 @@ nav {
     color: #00f7ff;
 }
 
+/* Upcoming release */
+.upcoming-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 0.65rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #041018;
+    background: linear-gradient(90deg, #ffc14d, #00f7ff);
+    box-shadow: 0 0 18px rgba(0, 247, 255, 0.25);
+}
+
+.release-date--riddle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+}
+
+.riddle-label {
+    color: #9a9aaa;
+    font-size: 0.95rem;
+}
+
+.riddle-date {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #00f7ff;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 18px rgba(0, 247, 255, 0.45);
+}
+
+.upcoming-note {
+    margin-top: 0.85rem;
+}
+
+.platform-links--soon {
+    display: flex;
+    justify-content: center;
+}
+
+.platform-soon-msg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 1px dashed #00f7ff44;
+    background: #12121f;
+    color: #c8c8d0;
+}
+
+.platform-soon-msg i {
+    color: #00f7ff;
+}
+
+.release-card--upcoming {
+    position: relative;
+    border-color: #ffc14d55;
+    box-shadow: 0 0 22px rgba(255, 193, 77, 0.12);
+}
+
+.release-card--upcoming:hover {
+    border-color: #00f7ff;
+}
+
+.release-card-badge-soon {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 2;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #041018;
+    background: #ffc14d;
+}
+
 .section h2 {
     color: #f2f2f2;
 }
