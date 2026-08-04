@@ -7,7 +7,7 @@
  * Google Analytics 4: https://analytics.google.com/ → Measurement ID (G-XXXXXXXX)
  */
 (function () {
-  var ASSET_V = "20260803";
+  var ASSET_V = "20260804";
 
   // === Аналитика (официальный код Метрики) ===
   var YANDEX_METRIKA_ID = "110894233";
@@ -89,7 +89,7 @@
 
   /** Единый каталог релизов (для карточек «другие» и т.п.) */
   var RELEASES = [
-    { id: "pelmeni", title: "Пельмени (скоро)", href: "pelmeni.html" },
+    { id: "pelmeni", title: "Пельмени", href: "pelmeni.html" },
     { id: "skazochnyy-memolog", title: "Сказочный мемолог", href: "skazochnyy-memolog.html" },
     { id: "8bitnaya-nostalgiya", title: "8битная настальгия", href: "8bitnaya-nostalgiya.html" },
     { id: "cifrovoe-zavtra", title: "Digital Tomorrow (альбом)", href: "cifrovoe-zavtra.html" },
