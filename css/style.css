@@ -401,6 +401,70 @@ nav {
     color: #d0d0d0;
 }
 
+/* Press / interview on artist page */
+.press-section {
+    margin-top: 3rem;
+}
+
+.press-card {
+    max-width: 40rem;
+    padding: 1.4rem 1.35rem 1.5rem;
+    background: linear-gradient(160deg, #14142a 0%, #0c0c18 100%);
+    border: 1px solid #00f7ff44;
+    border-radius: 14px;
+    box-shadow: 0 0 24px rgba(0, 247, 255, 0.07);
+}
+
+.press-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem 0.85rem;
+    margin: 0 0 0.75rem;
+}
+
+.press-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #041018;
+    background: #00f7ff;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.press-source {
+    color: #9a9aaa;
+    font-size: 0.9rem;
+}
+
+.press-title {
+    margin: 0 0 0.65rem;
+    font-size: 1.2rem;
+    color: #f2f2f2;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.press-excerpt {
+    margin: 0 0 1.15rem;
+    color: #b8b8c0;
+    line-height: 1.55;
+    font-size: 0.98rem;
+}
+
+.press-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.press-link i {
+    font-size: 0.85rem;
+}
+
 /* Tips / donations on artist page */
 .tips-section {
     margin-top: 3rem;
