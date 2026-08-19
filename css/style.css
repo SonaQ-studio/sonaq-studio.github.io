@@ -884,6 +884,28 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Дата релиза не подтверждена (может сдвинуться) */
+.date-uncertain {
+    color: #a8a8b8;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+    filter: blur(0.55px);
+    opacity: 0.9;
+    transition: filter 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+
+.date-uncertain:hover,
+.release-card:hover .date-uncertain {
+    filter: blur(0);
+    opacity: 1;
+    color: #ffc14d;
+}
+
+.release-card-body .date-uncertain {
+    font-size: inherit;
+}
+
 .section-title {
     color: #00f7ff;
     margin: 2.5rem 0 1rem;
