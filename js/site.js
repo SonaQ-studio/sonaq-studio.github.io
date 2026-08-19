@@ -7,7 +7,7 @@
  * Google Analytics 4: https://analytics.google.com/ → Measurement ID (G-XXXXXXXX)
  */
 (function () {
-  var ASSET_V = "20260804";
+  var ASSET_V = "20260813c";
 
   // === Аналитика (официальный код Метрики) ===
   var YANDEX_METRIKA_ID = "110894233";
@@ -87,10 +87,10 @@
   var artist = base + "artist/";
   var releasesIndex = base + "releases/";
 
-  /** Единый каталог релизов (для карточек «другие» и т.п.) */
+  /** Единый каталог релизов (новые сверху) */
   var RELEASES = [
-    { id: "belye-dzhedai", title: "Белые джедаи", href: "belye-dzhedai.html" },
     { id: "porog", title: "Порог (альбом)", href: "porog.html" },
+    { id: "belye-dzhedai", title: "Белые джедаи", href: "belye-dzhedai.html" },
     { id: "pelmeni", title: "Пельмени", href: "pelmeni.html" },
     { id: "skazochnyy-memolog", title: "Сказочный мемолог", href: "skazochnyy-memolog.html" },
     { id: "8bitnaya-nostalgiya", title: "8битная настальгия", href: "8bitnaya-nostalgiya.html" },
@@ -213,7 +213,52 @@
     });
 
     fillOtherReleases();
+    initLyricsFold();
     initAnalytics();
+  }
+
+  /** Тексты песен: свёрнуты по умолчанию, клик разворачивает */
+  function initLyricsFold() {
+    var blocks = document.querySelectorAll(".lyrics");
+    if (!blocks.length) return;
+
+    blocks.forEach(function (el) {
+      if (el.closest("details.lyrics-fold")) return;
+
+      var label = "Текст песни";
+      var prev = el.previousElementSibling;
+      if (prev && prev.classList && prev.classList.contains("lyrics-track-title")) {
+        label = prev.innerHTML;
+        prev.remove();
+      } else if (prev && prev.classList && prev.classList.contains("section-title")) {
+        var t = (prev.textContent || "").trim().toLowerCase();
+        if (t === "текст песни") {
+          label = "Текст песни";
+          prev.remove();
+        }
+        /* «Тексты» (мультитрек) оставляем как заголовок секции */
+      }
+
+      var details = document.createElement("details");
+      details.className = "lyrics-fold";
+
+      var summary = document.createElement("summary");
+      summary.className = "lyrics-fold-summary";
+      summary.innerHTML =
+        '<span class="lyrics-fold-label">' +
+        label +
+        '</span><span class="lyrics-fold-hint" aria-hidden="true">развернуть</span>' +
+        '<i class="fas fa-chevron-down lyrics-fold-chevron" aria-hidden="true"></i>';
+
+      el.parentNode.insertBefore(details, el);
+      details.appendChild(summary);
+      details.appendChild(el);
+
+      details.addEventListener("toggle", function () {
+        var hint = summary.querySelector(".lyrics-fold-hint");
+        if (hint) hint.textContent = details.open ? "свернуть" : "развернуть";
+      });
+    });
   }
 
   if (document.readyState === "loading") {

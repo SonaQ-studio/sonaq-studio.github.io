@@ -941,6 +941,78 @@ nav {
     font-family: monospace;
 }
 
+/* Сворачиваемые тексты */
+.lyrics-fold {
+    margin: 0.85rem 0 1.1rem;
+    border: 1px solid #00f7ff28;
+    border-radius: 12px;
+    background: #12121f;
+    overflow: hidden;
+}
+
+.lyrics-fold-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.15rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: #e8e8f0;
+    font-weight: 600;
+    font-size: 1.02rem;
+    transition: background 0.15s ease;
+}
+
+.lyrics-fold-summary::-webkit-details-marker {
+    display: none;
+}
+
+.lyrics-fold-summary::marker {
+    content: "";
+}
+
+.lyrics-fold-summary:hover {
+    background: #1a1a2e;
+}
+
+.lyrics-fold-label {
+    flex: 1;
+    min-width: 0;
+}
+
+.lyrics-fold-hint {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #8a8a9a;
+    letter-spacing: 0.02em;
+}
+
+.lyrics-fold-chevron {
+    color: #00f7ff;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.lyrics-fold[open] .lyrics-fold-chevron {
+    transform: rotate(180deg);
+}
+
+.lyrics-fold[open] .lyrics-fold-summary {
+    border-bottom: 1px solid #00f7ff22;
+}
+
+.lyrics-fold .lyrics {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: #1a1a2e;
+}
+
+.lyrics-fold .lyrics-lang-tag {
+    margin-left: 0.35rem;
+}
+
 .platform-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
