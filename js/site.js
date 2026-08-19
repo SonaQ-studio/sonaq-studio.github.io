@@ -89,6 +89,7 @@
 
   /** Единый каталог релизов (для карточек «другие» и т.п.) */
   var RELEASES = [
+    { id: "belye-dzhedai", title: "Белые джедаи", href: "belye-dzhedai.html" },
     { id: "porog", title: "Порог (альбом)", href: "porog.html" },
     { id: "pelmeni", title: "Пельмени", href: "pelmeni.html" },
     { id: "skazochnyy-memolog", title: "Сказочный мемолог", href: "skazochnyy-memolog.html" },
