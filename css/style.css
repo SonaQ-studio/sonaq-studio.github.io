@@ -1013,6 +1013,18 @@ nav {
     margin-left: 0.35rem;
 }
 
+.description-disclaimer {
+    margin-top: 0.85rem;
+    color: #9a9aaa;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.description-disclaimer em {
+    font-style: italic;
+    color: #a8a8b8;
+}
+
 .platform-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
