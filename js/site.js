@@ -7,7 +7,7 @@
  * Google Analytics 4: https://analytics.google.com/ → Measurement ID (G-XXXXXXXX)
  */
 (function () {
-  var ASSET_V = "20260824a";
+  var ASSET_V = "20260824b";
 
   // === Аналитика (официальный код Метрики) ===
   var YANDEX_METRIKA_ID = "110894233";

@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://sonaq.studio/news/">
     <meta property="og:image" content="https://sonaq.studio/og-image.jpg">
     <title>Лента новостей — SonaQ</title>
-    <link rel="stylesheet" href="../css/style.css?v=20260824a">
+    <link rel="stylesheet" href="../css/style.css?v=20260824b">
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="../favicon.png" sizes="180x180">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,68 +22,65 @@
         <div class="container">
             <h1 class="section-title" style="font-size:2rem; margin-top:0;">Лента новостей</h1>
             <p class="muted" style="margin-bottom:1.25rem;">
-                Живая стена сообщества
-                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">vk.com/sonaq.official</a>
-                — посты появляются здесь автоматически.
+                Только посты со стены
+                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">vk.com/sonaq.official</a>.
             </p>
 
             <div class="vk-feed-wrap">
-                <!-- Официальный виджет сообщества ВК, mode=4 = стена -->
-                <div id="vk_groups"></div>
+                <!--
+                  Прямой iframe официального Community Widget (mode=4 = стена).
+                  OpenAPI иногда отдаёт «широкую» страницу ВК — iframe стабильнее.
+                  gid=240165866 = sonaq.official
+                -->
+                <iframe
+                    id="vk-wall-frame"
+                    title="Стена сообщества SonaQ во ВКонтакте"
+                    src="https://vk.com/widget_community.php?gid=240165866&amp;mode=4&amp;width=560&amp;height=800&amp;color1=0A0A0A&amp;color2=E8E8E8&amp;color3=00F7FF&amp;wide=1&amp;no_cover=1"
+                    width="560"
+                    height="800"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allow="encrypted-media; clipboard-write"
+                ></iframe>
             </div>
 
             <p class="muted" style="margin-top:1.25rem;">
-                Если лента не загрузилась (блокировщик / сеть) —
-                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">открой сообщество ВК</a>.
+                Не грузится?
+                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">Открыть сообщество ВК</a>
+                или отключи блокировщик для vk.com / sonaq.studio.
             </p>
         </div>
     </main>
 
     <div id="site-footer"></div>
-    <script src="../js/site.js?v=20260824a"></script>
-    <script src="https://vk.com/js/api/openapi.js?169" defer></script>
+    <script src="../js/site.js?v=20260824b"></script>
     <script>
       (function () {
-        var GROUP_ID = 229780192; // sonaq.official
-        function mountVk() {
-          if (!window.VK || !VK.Widgets || !VK.Widgets.Group) return false;
-          VK.Widgets.Group(
-            "vk_groups",
-            {
-              mode: 4, // стена / посты
-              wide: 1,
-              width: "auto",
-              height: 800,
-              color1: "0A0A0A",
-              color2: "E8E8E8",
-              color3: "00F7FF",
-            },
-            GROUP_ID
-          );
-          return true;
-        }
-        function tryMount(attemptsLeft) {
-          if (mountVk()) return;
-          if (attemptsLeft <= 0) {
-            var slot = document.getElementById("vk_groups");
-            if (slot && !slot.childNodes.length) {
-              slot.innerHTML =
-                '<p class="muted">Не удалось загрузить виджет ВК. ' +
-                '<a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">Перейти в сообщество</a>.</p>';
-            }
-            return;
+        var frame = document.getElementById("vk-wall-frame");
+        var wrap = document.querySelector(".vk-feed-wrap");
+        if (!frame || !wrap) return;
+
+        function fitWidth() {
+          var w = Math.max(300, Math.min(560, Math.floor(wrap.clientWidth - 8)));
+          var src =
+            "https://vk.com/widget_community.php?gid=240165866" +
+            "&mode=4&wide=1&no_cover=1&height=800" +
+            "&color1=0A0A0A&color2=E8E8E8&color3=00F7FF" +
+            "&width=" +
+            w;
+          frame.width = String(w);
+          if (frame.getAttribute("data-w") !== String(w)) {
+            frame.setAttribute("data-w", String(w));
+            frame.src = src;
           }
-          setTimeout(function () {
-            tryMount(attemptsLeft - 1);
-          }, 200);
         }
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", function () {
-            tryMount(25);
-          });
-        } else {
-          tryMount(25);
-        }
+
+        fitWidth();
+        var t;
+        window.addEventListener("resize", function () {
+          clearTimeout(t);
+          t = setTimeout(fitWidth, 250);
+        });
       })();
     </script>
 </body>
