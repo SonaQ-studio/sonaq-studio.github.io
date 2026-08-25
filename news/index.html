@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://sonaq.studio/news/">
     <meta property="og:image" content="https://sonaq.studio/og-image.jpg">
     <title>Лента новостей — SonaQ</title>
-    <link rel="stylesheet" href="../css/style.css?v=20260824b">
+    <link rel="stylesheet" href="../css/style.css?v=20260824c">
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="../favicon.png" sizes="180x180">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,22 +22,22 @@
         <div class="container">
             <h1 class="section-title" style="font-size:2rem; margin-top:0;">Лента новостей</h1>
             <p class="muted" style="margin-bottom:1.25rem;">
-                Только посты со стены
-                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">vk.com/sonaq.official</a>.
+                Посты со стены
+                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">vk.com/sonaq.official</a>
+                · без ленты рекомендаций ВК.
             </p>
 
             <div class="vk-feed-wrap">
                 <!--
-                  Прямой iframe официального Community Widget (mode=4 = стена).
-                  OpenAPI иногда отдаёт «широкую» страницу ВК — iframe стабильнее.
+                  Community Widget: mode=4 стена, no_cover/no_head — без шапки сообщества.
                   gid=240165866 = sonaq.official
                 -->
                 <iframe
                     id="vk-wall-frame"
                     title="Стена сообщества SonaQ во ВКонтакте"
-                    src="https://vk.com/widget_community.php?gid=240165866&amp;mode=4&amp;width=560&amp;height=800&amp;color1=0A0A0A&amp;color2=E8E8E8&amp;color3=00F7FF&amp;wide=1&amp;no_cover=1"
+                    src="https://vk.com/widget_community.php?gid=240165866&amp;mode=4&amp;width=560&amp;height=900&amp;color1=0A0A0A&amp;color2=E8E8E8&amp;color3=00F7FF&amp;wide=1&amp;no_cover=1&amp;no_head=1"
                     width="560"
-                    height="800"
+                    height="900"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     allow="encrypted-media; clipboard-write"
@@ -46,14 +46,13 @@
 
             <p class="muted" style="margin-top:1.25rem;">
                 Не грузится?
-                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">Открыть сообщество ВК</a>
-                или отключи блокировщик для vk.com / sonaq.studio.
+                <a href="https://vk.com/sonaq.official" target="_blank" rel="noopener">Открыть сообщество ВК</a>.
             </p>
         </div>
     </main>
 
     <div id="site-footer"></div>
-    <script src="../js/site.js?v=20260824b"></script>
+    <script src="../js/site.js?v=20260824c"></script>
     <script>
       (function () {
         var frame = document.getElementById("vk-wall-frame");
@@ -62,15 +61,18 @@
 
         function fitWidth() {
           var w = Math.max(300, Math.min(560, Math.floor(wrap.clientWidth - 8)));
+          var h = window.matchMedia("(max-width: 640px)").matches ? 700 : 900;
           var src =
             "https://vk.com/widget_community.php?gid=240165866" +
-            "&mode=4&wide=1&no_cover=1&height=800" +
+            "&mode=4&wide=1&no_cover=1&no_head=1" +
             "&color1=0A0A0A&color2=E8E8E8&color3=00F7FF" +
-            "&width=" +
-            w;
+            "&height=" + h +
+            "&width=" + w;
           frame.width = String(w);
-          if (frame.getAttribute("data-w") !== String(w)) {
-            frame.setAttribute("data-w", String(w));
+          frame.height = String(h);
+          var key = w + "x" + h;
+          if (frame.getAttribute("data-key") !== key) {
+            frame.setAttribute("data-key", key);
             frame.src = src;
           }
         }
