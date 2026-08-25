@@ -7,7 +7,7 @@
  * Google Analytics 4: https://analytics.google.com/ → Measurement ID (G-XXXXXXXX)
  */
 (function () {
-  var ASSET_V = "20260813c";
+  var ASSET_V = "20260824a";
 
   // === Аналитика (официальный код Метрики) ===
   var YANDEX_METRIKA_ID = "110894233";
@@ -78,7 +78,7 @@
 
   function getBase() {
     var path = (window.location.pathname || "").replace(/\\/g, "/");
-    if (/\/(releases|artist)(\/|$)/i.test(path)) return "../";
+    if (/\/(releases|artist|news)(\/|$)/i.test(path)) return "../";
     return "";
   }
 
@@ -86,6 +86,7 @@
   var home = base + "index.html";
   var artist = base + "artist/";
   var releasesIndex = base + "releases/";
+  var newsIndex = base + "news/";
 
   /** Единый каталог релизов (новые сверху) */
   var RELEASES = [
@@ -111,6 +112,7 @@
     '<div class="nav-links">' +
     '<a href="' + home + '#home">Главная</a>' +
     '<a href="' + releasesIndex + '">Релизы</a>' +
+    '<a href="' + newsIndex + '">Лента</a>' +
     '<a href="' + artist + '">Артист</a>' +
     '<a href="' + home + '#about">О проекте</a>' +
     '<a href="#contact">Контакты</a>' +
@@ -131,6 +133,7 @@
     "<p><strong>Навигация</strong></p>" +
     '<p><a href="' + home + '#home">Главная</a></p>' +
     '<p><a href="' + releasesIndex + '">Релизы</a></p>' +
+    '<p><a href="' + newsIndex + '">Лента новостей</a></p>' +
     '<p><a href="' + artist + '">Страница артиста</a></p>' +
     '<p><a href="' + home + '#about">О проекте</a></p>' +
     "</div>" +
