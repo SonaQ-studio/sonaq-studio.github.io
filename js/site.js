@@ -7,7 +7,7 @@
  * Google Analytics 4: https://analytics.google.com/ → Measurement ID (G-XXXXXXXX)
  */
 (function () {
-  var ASSET_V = "20260824c";
+  var ASSET_V = "20260826a";
 
   // === Аналитика (официальный код Метрики) ===
   var YANDEX_METRIKA_ID = "110894233";
@@ -90,8 +90,8 @@
 
   /** Единый каталог релизов (новые сверху) */
   var RELEASES = [
-    { id: "porog", title: "Порог (альбом)", href: "porog.html" },
     { id: "belye-dzhedai", title: "Белые джедаи", href: "belye-dzhedai.html" },
+    { id: "porog", title: "Порог (альбом)", href: "porog.html" },
     { id: "pelmeni", title: "Пельмени", href: "pelmeni.html" },
     { id: "skazochnyy-memolog", title: "Сказочный мемолог", href: "skazochnyy-memolog.html" },
     { id: "8bitnaya-nostalgiya", title: "8битная настальгия", href: "8bitnaya-nostalgiya.html" },
