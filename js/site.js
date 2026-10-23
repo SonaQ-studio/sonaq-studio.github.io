@@ -90,6 +90,7 @@
 
   /** Единый каталог релизов (новые сверху) */
   var RELEASES = [
+    { id: "bud-v-hlam", title: "Будь в хлам", href: "bud-v-hlam.html" },
     { id: "porog", title: "Порог (альбом)", href: "porog.html" },
     { id: "belye-dzhedai", title: "Белые джедаи", href: "belye-dzhedai.html" },
     { id: "pelmeni", title: "Пельмени", href: "pelmeni.html" },
