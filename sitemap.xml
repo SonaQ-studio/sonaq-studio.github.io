@@ -25,6 +25,12 @@
         <priority>0.85</priority>
     </url>
     <url>
+        <loc>https://sonaq.studio/releases/dyhanie-hanga.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.99</priority>
+    </url>
+    <url>
         <loc>https://sonaq.studio/releases/belye-dzhedai.html</loc>
         <lastmod>2026-08-26</lastmod>
         <changefreq>weekly</changefreq>
